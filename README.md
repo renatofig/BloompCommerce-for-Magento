@@ -22,7 +22,7 @@ Para instalar acesse a seção "Manual" no Bloompa Dashboard (<http://www.bloomp
 
 ## Para atualizar seu módulo:
 
-Descompacte o pacote e sobrescreva os arquivos do módulo com os arquivos do pacote.
+Descompacte a última versão do pacote e sobrescreva os arquivos do módulo pelos arquivos do pacote.
 
 ***
 

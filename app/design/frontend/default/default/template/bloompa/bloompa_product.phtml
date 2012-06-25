@@ -21,7 +21,7 @@ prod_currency: "BRL",
 prod_price: "<?=$item->_data['price'];?>"
 }];
 
-function loadBCW(){ bcw.init({token: "<?=$token;?>",product: bcw_product,show: false }); }
+function loadBCW(){ bcw.init({token: "<?=$token;?>",product: bcw_product,show: true }); }
 
 (function(){var bc = document.createElement("script"); bc.type = "text/javascript"; bc.async = true;bc.src = ("https:" == document.location.protocol ? "https://" : "http://") + "www.bloompa.com.br/js/product.widget-load.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(bc, s);bc.onload = loadBCW;})();
 </script>

@@ -57,7 +57,7 @@ bcw.init(
   {
     token: "<?=$token;?>",
     cart_url:"<?=Mage::getBaseUrl().'bloompcommerce';?>",
-    store_logo: '<?=$this->getSkinUrl('images/logotipo.png');?>',
+    store_logo: '<?=$this->getLogoSrc()?>',
 		products_in_cart: bcw_products,
 		cart_currency: 'BRL',
 		cart_amount: '<?php echo Mage::getSingleton('checkout/session')->getQuote()->getSubtotal(); ?>'

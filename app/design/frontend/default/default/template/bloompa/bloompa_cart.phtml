@@ -51,7 +51,12 @@ endif;
 	];
 </script>
 
+<?php if(isset($_SERVER["HTTPS"]) AND $_SERVER["HTTPS"] == "on"): ?>
 <script language="javascript" type="text/javascript" src="https://www.bloompa.com.br/js/cart.widget-load.js" rel="sbloompa-cart-widget"></script>
+<?php else: ?>
+<script language="javascript" type="text/javascript" src="http://www.bloompa.com.br/js/cart.widget-load.js" rel="sbloompa-cart-widget"></script>
+<?php endif; ?>
+
 <script language="javascript" type="text/javascript">
 bcw.init(
   {

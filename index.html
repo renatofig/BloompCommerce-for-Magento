@@ -1,67 +1,403 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Bloomp Commerce For Magento by Bloompa</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bloomp Commerce - Magento</title>
+<meta name="description" content="Módulo do Bloomp Commerce para a plataforma de e-commerce Magento.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Styles -->
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<link href="assets/css/font-awesome.css" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300|Bree+Serif" rel="stylesheet" type="text/css">
+<link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+<!--[if IE]>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:600italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Bree+Serif:400" rel="stylesheet" type="text/css">
     <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Bloomp Commerce For Magento</h1>
-        <p>Convertendo visitas em vendas!</p>
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<!--[if IE 7]>
+	  <link rel="stylesheet" href="assets/css/font-awesome-ie7.css">
+	<![endif]-->
+	<script type="text/javascript">
+	var QueryString = function () {
+	var query_string = {};
+	var query = window.location.search.substring(1);
+	var vars = query.split("&");
+	for (var i=0;i<vars.length;i++) {
+	var pair = vars[i].split("=");
+	// If first entry with this name
+	if (typeof query_string[pair[0]] === "undefined") {
+	query_string[pair[0]] = pair[1];
+	// If second entry with this name
+	} else if (typeof query_string[pair[0]] === "string") {
+	var arr = [ query_string[pair[0]], pair[1] ];
+	query_string[pair[0]] = arr;
+	// If third or later entry with this name
+	} else {
+	query_string[pair[0]].push(pair[1]);
+	}
+	} 
+	return query_string;
+	} ();		
+	</script>
 
-        <p class="view"><a href="https://github.com/Bloompa/BloompCommerce-for-Magento">View the Project on GitHub <small>Bloompa/BloompCommerce-for-Magento</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/Bloompa/BloompCommerce-for-Magento/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/Bloompa/BloompCommerce-for-Magento/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/Bloompa/BloompCommerce-for-Magento">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>BloompCommerce for Magento</h1>
-
-<h2>Sobre:</h2>
-
-<p>Módulo desenvolvido pela equipe Bloompa.<br>
-Versão atual: 1.1</p>
-
-<h3>O que é Bloompa?</h3>
-
-<p>O Bloompa é uma startup que nasceu através de pesquisas sobre o mercado de social commerce. Bloompa é a camada social dentro dos e-commerces!<br>
-Acesse nosso site(<a href="http://www.bloompa.com.br">http://www.bloompa.com.br</a>) e saiba mais sobre nossas soluções.</p>
-
-<h3>O que é Bloomp Commerce?</h3>
-
-<p>É um conjunto de soluções que aumentam a taxa de conversão de vendas das lojas virtuais usando o poder das redes sociais, com um novo jeito de engajar, analisar e capturar mais e melhores clientes.</p>
-
-<hr><h2>Instalação</h2>
-
-<p><strong>ATENÇÃO:</strong> Antes de instalar o plugin você deve cadastrar sua loja em <a href="http://www.bloompa.com.br">http://www.bloompa.com.br</a>.  </p>
-
-<p>Para instalar acesse a seção "Manual" no Bloompa Dashboard (<a href="http://www.bloompa.com.br/dashboard">http://www.bloompa.com.br/dashboard</a>) e siga as instruções.</p>
-
-<h2>Para atualizar seu módulo:</h2>
-
-<p>Descompacte a última versão do pacote e sobrescreva os arquivos do módulo pelos arquivos do pacote.</p>
-
-<hr><p>Em caso de problemas, entre em contato com <a href="mailto:dev@bloompa.com.br">dev@bloompa.com.br</a>.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/Bloompa">Bloompa</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
+</head>
+<body>
+<header class="masthead">
+	<div class="container">  	<br/><br/>
+<!--     <a href="#" id="brand">Módulo Magento</a> -->
+    <h1 class="font-bree-serif">Bloomp Commerce para Magento</h1>
+    <p class="font-open-sans-normal">Aumente suas vendas e conquiste mais clientes!</p>
     
-  </body>
+    <p class="jumbo"> <a href="https://github.com/Bloompa/BloompCommerce-for-Magento" class="btn btn-inverse btn-large font-open-sans-normal"><strong>Siga-nos no GitHub</strong></a> <a href="https://github.com/Bloompa/BloompCommerce-for-Magento/downloads" class="btn btn-success btn-large font-open-sans-normal"><strong>Faça o download do módulo!</strong> <small>(v1.2)</small></a> </p>
+    
+    <p class="share"> <a href="https://twitter.com/intent/tweet?screen_name=bloompa_news" class="twitter-mention-button" data-related="madebyraj">Tweet to @bloompa_news</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="bloompa_news">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </p>
+  </div><!--end container-->  
+
+  </header>
+  <div class="main-content">
+  <div class="container">
+  	<div class="row" id="content">
+    <div class="span12">
+      <div class="tabbable">
+        <ul class="nav nav-tabs" id="pluginTab">
+          <li  class="active"><a href="#howtouse"><strong style="font-size: 20px;"><i style="margin-top:8px;" class="icon-book"></i> Manual de Instalação</strong></a></li>
+          <li><a href="#overview"><strong style="font-size: 20px;"><i style="margin-top:8px;" class="icon-info-sign"></i> Sobre</strong></a></li>
+<!--
+          <li><a href="#documentation">Documentação</a></li>
+          <li><a href="#roadmap">Roadmap and changelog</a></li>
+-->
+<!--           <li><a href="mailto:dev@bloompa.com.br" >Reporte problemas</a></li> -->
+        </ul>
+        <div class="tab-content">
+        <!-- 
+          =====================================
+          Overview Tab Content
+          =====================================
+          -->
+          <div class="tab-pane" id="overview">
+          <br/>
+            <h2 class="font-bree-serif">O que é Bloomp Commerce?</h2><br/>
+            <p>Ofereça uma nova experiência no processo de compra da sua loja, utilizando um conjunto de soluções que promove o boca-a-boca online e o engajamento entre consumidores com a sua marca através das principais redes sociais.</p>
+<!--             <h4 class="align-center font-open-sans-normal-italic">Need reasons to use this plugin? Check the features below.</h4> -->
+						
+            <p class="jumbo" align="center"><a href="http://www.bloompa.com.br/bloompcommerce/" class="btn btn-warning btn-large">Saiba mais sobre as funcionalidades, planos e contrate agora!</a></p>  
+
+            <hr class="soften"/>            
+
+
+            <h2 class="font-bree-serif ">Quem já utiliza</h2>
+            <ul class="thumbnails">
+              <li class="span3"> <a href="#" class="thumbnail"> <img src="http://www.bloompa.com.br/bloompcommerce/images/clientes/linux.gif" alt="Linux Mall"> </a> </li>
+              <li class="span3"> <a href="#" class="thumbnail"> <img src="http://www.bloompa.com.br/bloompcommerce/images/clientes/camiseteria.gif" alt="Camiseteria"> </a> </li>
+              <li class="span3"> <a href="#" class="thumbnail"> <img src="http://www.bloompa.com.br/bloompcommerce/images/clientes/senna.gif" alt="Senna Store"> </a> </li>
+              <li class="span3"> <a href="#" class="thumbnail"> <img src="http://www.bloompa.com.br/images/site/clients/showtenis_logo.png" alt="Show Tenis"> </a> </li>
+            </ul>
+          </div>
+
+          <!-- 
+          =====================================
+          How to Use Tab Content
+          =====================================
+          -->
+          <div class="tab-pane active" id="howtouse">
+          	<section class="sec-header">
+                <h3 class="font-bree-serif">Passo 1</h3>
+                <li>Antes de qualquer implementação é preciso fazer o cadastro. Se você não possui, <a class="btn btn-primary" href="http://www.bloompa.com.br/bloompcommerce">cadastre-se aqui</a>.</li>
+                <li>Faça o download da última versão do módulo.</li>
+            </section>
+<br/><br/>
+            <section class="sec-header">
+                <h3 class="font-bree-serif">Passo 2</h3>
+                <p>Descompacte o arquivo que você fez download e copie a pasta "<strong>app</strong>" para dentro da estrutura da sua loja.</p>
+                <div class="alert alert-warning"><strong>Atenção:</strong> na versão 1.6 do Magento você deve colocar os arquivos contidos na pasta "<strong>app/design/frontend</strong>" dentro da pasta "<strong>app/design/frontend/base</strong>" da sua loja.</div>
+            </section>
+            
+            <br/><br/>
+            <section class="sec-header">
+                <h3 class="font-bree-serif">Passo 3</h3>
+                <p>Acesse qualquer página da sua loja para que seja criada a tabela "<code><attr>bloompa</attr></code>" no banco de dados.</p>
+                <div class="alert alert-warning">Caso não tenha gerado a tabela, acesse o menu <strong>System > Cache Management</strong> na área administrativa de sua loja, marque todos os registros, no campo <strong>Actions</strong> selecione <strong>Disable</strong> e em seguida clique em <strong>Submit</strong>. Este procedimento irá fazer com que as páginas sejam geradas novamente e consequentemente tente criar a tabela "bloompa" no banco de dados.</div>
+            </section>
+
+            <br/><br/>
+            <section class="sec-header">
+                <h3 class="font-bree-serif">Passo 4</h3>
+                <p>Rode o seguinte comando SQL em seu banco de dados:</p>
+                <pre class="prettyprint linenums">INSERT INTO bloompa (id_token, token) VALUES (1, '<script>if(QueryString.token!=undefined){document.write(QueryString.token);}else{document.write('<strong>INSIRA SEU TOKEN AQUI</strong>');}</script>');</pre>
+            </section>
+
+            <br/><br/>
+            <section class="sec-header">
+                <h3 class="font-bree-serif">Passo 5</h3>
+                <p>Inclua o código abaixo no arquivo da página de produtos do seu tema, onde você deseja que os botões das Expressões Sociais sejam mostrados.</p>
+                <pre class="prettyprint linenums">&lt;div id="bloompa-social-expression-widget"&gt;&lt;/div&gt;</pre>
+            </section>
+
+						<br/><br/>
+            <section class="sec-header">
+                <h3 class="font-bree-serif">Passo 6</h3>
+                <p>Acesse o carrinho de compras e confira se apareceu os botões de compartilhamento.</p>
+
+								<div class="alert">Caso deseje pode alterar o posicionamento, edite o arquivo <strong>app/design/frontend/base/default/template/checkout/cart.phtml</strong>, localize a linha <code>&lt;div id="bloompa-cart-widget"&gt;&lt;/div&gt;</code> e substitua por <code>&lt;div id="bloompa-cart-widget" style="float: left; margin-right: 40px;" &gt;&lt;/div&gt;</code>.</div>						
+						</section>
+
+
+            <br/><br/>
+            <section class="sec-header">
+                <h3 class="font-bree-serif">Passo 7</h3>
+                <p> Na área administrativa da sua loja, acesse o menu <strong>Promotions > Shopping Cart Price Rules</strong> e verifique se os coupons do Bloompa foram gerados.</p>
+            </section>
+
+						
+						<br/><br/>
+            <section class="sec-header">
+                <h3 class="font-bree-serif">Fim</h3>
+                <p>Pronto! Agora você pode realizar modificações e acompanhar os resultados através do <a class="btn btn-success" href="http://www.bloompa.com.br/dashboard/login">Painel de Controle</a>.</p>
+            </section>
+
+	          </div><!--end howtouse-content-->
+          <!-- 
+          =====================================
+          Documentation Tab Content
+          =====================================
+          -->
+          <div class="tab-pane" id="documentation">
+             <section class="sec-header">
+                <h3 class="font-bree-serif">Plugin Settings</h3>
+                <p>Plugin accepts settings from an object of key/value pairs, and can be assigned to any HTML element.</p>
+                <table class="table table-bordered settings">
+                <thead>
+                <tr>
+                	<th><strong>Property</strong></th>
+                    <th><strong>Default</strong></th>
+                    <th><strong>Description</strong></th>
+                </tr>
+                </thead>
+                <tbody>
+                	<tr>
+                        <td>Property1</td>
+                        <td>Default Value</td>
+                        <td>some description about this</td>
+                    </tr>
+                    <tr>
+                        <td>Property2</td>
+                        <td>"Default String"</td>
+                        <td>some description about this</td>
+                    </tr>
+                    <tr>
+                        <td>Property3</td>
+                        <td>false</td>
+                        <td>some description about this</td>
+                    </tr>
+                    <tr>
+                        <td>Property4</td>
+                        <td>Default Value</td>
+                        <td>some description about this</td>
+                    </tr>
+                    <tr>
+                        <td>Property5</td>
+                        <td>"Default String"</td>
+                        <td>some description about this</td>
+                    </tr>
+                    <tr>
+                        <td>Property6</td>
+                        <td>false</td>
+                        <td>some description about this</td>
+                    </tr>
+                </tbody>
+                </table>
+                
+           </section>
+          </div><!--end documentation-content-->
+          
+           <!-- 
+          =====================================
+          Roadmap and changelog Tab Content
+          =====================================
+          -->
+          <div class="tab-pane" id="roadmap">
+            <section class="sec-header">
+              <h3 class="font-bree-serif">Roadmap</h3>
+              <p>For more up-to-date information on release dates for these versions, please refer to the <a href="#" class="tip" title="Link to your Github Account">Issues Milestones</a>.</p>
+              <table class="table table-bordered">
+                  <thead>
+                      <tr>
+                          <th><strong>Version</strong></th>
+                          <th><strong>Description</strong></th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                      <td>1.0.3</td>
+                      <td>Description about this version goes here</td>                  
+                  </tr>
+                  <tr>
+                      <td>1.0.2</td>
+                      <td>Description about this version goes here</td>                  
+                  </tr>
+                  <tr>
+                      <td>1.0.1</td>
+                      <td>Description about this version goes here</td>                  
+                  </tr>
+                  <tr>
+                      <td>1.0.0</td>
+                      <td>Description about this version goes here</td>                  
+                  </tr>
+                  
+                  </tbody>
+              </table>
+            </section>
+            
+            <section class="sec-header">
+              <h3 class="font-bree-serif">Changelog</h3>              
+              <div class="accordion" id="changelog-accordion">             
+                    <div class="accordion-group">
+                      <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseaa">
+                          <strong>1.0.3 (June 1, 2012)</strong>
+                        </a>
+                      </div>
+                      <div id="collapseaa" class="accordion-body collapse in">
+                        <div class="accordion-inner">
+                           <h5>CSS Changes</h5>
+                              <ul>
+                                  <li>Some description about the changes</li>
+                                  <li>Some description about the changes</li>
+                                  <li>Some description about the changes</li>
+                                  <li>Some description about the changes</li>
+                                  <li>Some description about the changes</li>
+                              </ul>
+                              <h5>Javascript Changes</h5>
+                              <ul>
+                                  <li>Some description about the changes</li>
+                                  <li>Some description about the changes</li>
+                                  <li>Some description about the changes</li>
+                              </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-group">
+                      <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseab">
+                          <strong>1.0.2 (April 1, 2012)</strong>
+                        </a>
+                      </div>
+                      <div id="collapseab" class="accordion-body collapse">
+                        <div class="accordion-inner">
+                           <h5>HTML Changes</h5>
+                              <ul>
+                                  <li>Some description about the changes</li>
+                                  <li>Some description about the changes</li>
+                                  <li>Some description about the changes</li>
+                                  <li>Some description about the changes</li>
+                                  <li>Some description about the changes</li>
+                              </ul>
+                              <h5>Javascript Changes</h5>
+                              <ul>
+                                  <li>Some description about the changes</li>
+                                  <li>Some description about the changes</li>
+                                  <li>Some description about the changes</li>
+                              </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-group">
+                      <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseac">
+                          <strong>1.0.1 (March 1, 2012)</strong>
+                        </a>
+                      </div>
+                      <div id="collapseac" class="accordion-body collapse">
+                        <div class="accordion-inner">
+                           <h5>HTML Changes</h5>
+                              <ul>
+                                  <li>Some description about the changes</li>
+                                  <li>Some description about the changes</li>
+                                  <li>Some description about the changes</li>
+                                  <li>Some description about the changes</li>
+                                  <li>Some description about the changes</li>
+                              </ul>
+                              <h5>Javascript Changes</h5>
+                              <ul>
+                                  <li>Some description about the changes</li>
+                                  <li>Some description about the changes</li>
+                                  <li>Some description about the changes</li>
+                              </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!--end accordion-->
+            </section>
+          </div><!--end roadmap-content-->
+          </div><!--end tab-content-->
+      </div><!--end tabbable-->
+      <br/><br/>
+      <div class="well align-center">
+        	<h4>Se você tiver dúvidas, reclamações ou sugestões, entre em contato através do nosso email <a class="link-green" href="mailto:dev@bloompa.com.br">dev@bloompa.com.br</a></h4>
+      </div><!--end well-->
+    </div><!--end span12-->
+  </div><!--end row-->
+  </div><!--end container-->
+  </div><!--end main-content-->
+  <footer>
+      <div class="container">
+      <div class="row">
+          <div class="span6">
+            <p>&copy; <a href="http://www.bloompa.com.br">Bloompa</a> 2012 - Todos os direitos reservados.</p>
+          </div>
+          <div class="span2 offset4">
+          <p><a href="http://www.bloompa.com.br/contato">Contato</a> | <a href="http://www.socialcommerce.bog.br">Blog</a> | <a href="http://www.bloompa.com.br/clientes">Clientes</a></p>
+          </div><!--end span2-->
+      </div><!--end row-->  
+      </div><!--end container-->  
+  </footer>
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript" src="assets/js/respond.js"></script>
+<script type="text/javascript">
+$(function(){
+	//Load Goodle Code Pretiffy		   
+	window.prettyPrint && prettyPrint();
+	//Tab function
+	$('#pluginTab a').click(function (e) {
+		e.preventDefault();
+		$(this).tab('show');
+	});
+	//FAQ autosuggest
+	$('.typeahead').typeahead();
+	//tooltip init
+	$("a.tip").tooltip();	
+	//footer link to got top
+	gotoTop();
+	function gotoTop(){
+		 // scroll body to 0px on click
+			$('a#top').on('click',function () {
+				$('body,html').animate({
+					scrollTop: 0
+				}, 800);
+				return false;
+			});
+	 };
+});
+</script>
+</body>
 </html>

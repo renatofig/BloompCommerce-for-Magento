@@ -12,6 +12,7 @@
 <link href="assets/css/font-awesome.css" rel="stylesheet">
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300|Bree+Serif" rel="stylesheet" type="text/css">
 <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+<link href="assets/css/colorbox.css" rel="stylesheet">
 <!--[if IE]>
     <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic" rel="stylesheet" type="text/css">
@@ -146,8 +147,17 @@
             <br/><br/>
             <section class="sec-header">
                 <h3 class="font-bree-serif">Passo 5</h3>
-                <p>Inclua o código abaixo no arquivo da página de produtos do seu tema, onde você deseja que os botões das Expressões Sociais sejam mostrados.</p>
-                <pre class="prettyprint linenums">&lt;div id="bloompa-social-expression-widget"&gt;&lt;/div&gt;</pre>
+                <p>Inclua o código abaixo no arquivo da página de produtos do seu tema, onde deseja que os botões de <strong>Expressões Sociais</strong> sejam mostrados.</p>
+
+                <div class="alert alert-info"><strong>Sobre as Expressões Sociais:</strong>  São botões onde consumidores podem demonstrar para seus amigos qual é o nível de interesse em produtos de sua loja. Ao clicar nestas <a href="http://www.socialcommerce.blog.br/wp-content/uploads/2012/09/product.jpg" class="img-modal"><i class="icon-picture small"></i> Expressões</a> o consumidor não envia apenas um compartilhamento para seu Facebook, ele envia uma <a class="img-modal" href="http://www.socialcommerce.blog.br/wp-content/uploads/2012/09/gallery.jpg"><i class="icon-picture small"></i>Vitrine Social</a> na qual seus amigos podem conhecer melhor o produto em questão e outros produtos relacionados a esse, não precisando sair da rede social, acessando a loja caso realmente tenha um interesse maior.
+                </div>
+
+<pre class="prettyprint linenums">
+&lt;!-- BLOOMP COMMERCE - SOCIAL EXPRESSIONS - BEGIN --&gt;
+&lt;div id="bloompa-social-expression-widget"&gt;&lt;/div&gt;
+&lt;!-- BLOOMP COMMERCE  - SOCIAL EXPRESSIONS - END --&gt;
+</pre>
+            
             </section>
 
 						<br/><br/>
@@ -373,6 +383,7 @@
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/google-code-prettify/prettify.js"></script>
 <script type="text/javascript" src="assets/js/respond.js"></script>
+<script src="assets/js/jquery.colorbox.js"></script>
 <script type="text/javascript">
 $(function(){
 	//Load Goodle Code Pretiffy		   
@@ -397,6 +408,7 @@ $(function(){
 				return false;
 			});
 	 };
+  jQuery('a.img-modal').colorbox();
 });
 </script>
 </body>

@@ -6,8 +6,13 @@
 			<active>true</active>
 			<codePool>community</codePool>
 			<version>2.0</version>
+<!--
+			<depends>
+          <Mage_Widget />
+      </depends>
+-->
 		</Bloompa_BloompCommerce>
 	</modules>    
-       
+	       
 
 </config>

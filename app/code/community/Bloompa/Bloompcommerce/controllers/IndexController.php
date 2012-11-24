@@ -74,7 +74,8 @@ class Bloompa_Bloompcommerce_IndexController extends Mage_Core_Controller_Front_
             $strsql = "SELECT * FROM salesrule WHERE `name`='Bloompa-" .$social_network. "'";
             $bloompa = $readConnection->fetchAll($strsql);
 
-            $strsql = "INSERT INTO salesrule (`rule_id`, `code`, `usage_limit`, `usage_per_customer`, `times_used`, `expiration_date`, `is_primary`) VALUES (" . $bloompa[0]['rule_id'] . ", '" . md5("Bloompa-" .$social_network. "', NULL, NULL, 0, NULL, 1)";
+            $strsql = "INSERT INTO salesrule (`rule_id`, `code`, `usage_limit`, `usage_per_customer`, `times_used`, `expiration_date`, `is_primary`) VALUES (".$bloompa[0]['rule_id'] . ", '" . md5("Bloompa-".$social_network)."', NULL, NULL, 0, NULL, 1)";
+
             if(!$writeConnection->query($strsql))              
               exit(json_encode(array('status'=>'fail', 'msg'=> 'Error to execute :'.$strsql)));              
             

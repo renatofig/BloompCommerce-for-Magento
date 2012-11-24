@@ -1,0 +1,31 @@
+<?xml version="1.0"?>   
+<layout version="1.5.0">   
+  <bloompcommerce_index_index>   
+    <reference name="root">   
+      <action method="setTemplate"><template>page/1column.phtml</template></action>   
+    </reference>   
+    <reference name="content">   
+      <block type="bloompcommerce/index" name="bloompcommerce_index" template="bloompcommerce/index.phtml"/>   
+    </reference>   
+  </bloompcommerce_index_index>  
+  
+    <checkout_cart_index>
+        <reference name="content">
+            <block type="page/html" name="bloompcommerce_cart" after="-" template="bloompcommerce/cart.phtml"/>
+        </reference>
+    </checkout_cart_index>
+
+	<catalog_product_view>
+		<reference name="content">		 	
+			<block type="module/block" name="bloompcommerce_product" template="bloompcommerce/product.phtml"/>			
+		</reference>
+	</catalog_product_view>
+
+	<checkout_onepage_success>
+	    <reference name="content">
+	        <block type="page/html" name="bloompcommerce_checkout" template="bloompcommerce/order_success.phtml"/>
+	    </reference>
+	</checkout_onepage_success>
+	    
+</layout>   
+	

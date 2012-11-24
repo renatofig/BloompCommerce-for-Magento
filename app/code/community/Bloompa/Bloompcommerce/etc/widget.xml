@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<widgets>    
+	<bloompcommerce_bc_social_expressions type="bloompcommerce/bc_social_expressions" translate="name description" module="bloompcommerce">
+        <name>BC Social Expressions</name>
+        <description type="desc">Enable the social expressions feature in your products page.</description>
+    </bloompcommerce_bc_social_expressions>    
+	<bloompcommerce_bc_shopping_cart type="bloompcommerce/bc_shopping_cart" translate="name description" module="bloompcommerce">
+        <name>BC Shoppig Cart</name>
+        <description type="desc">Add a share buttons to your shopping cart page.</description>
+        <parameters>
+		    <parameter1>
+                <label>parameter 1</label>
+                <visible>1</visible>
+                <required>1</required>
+                <type>text</type>
+				<value>parameter1</value>
+            </parameter1>
+		    <parameter2>
+                <label>parameter 2</label>
+                <visible>1</visible>
+                <required>1</required>
+                <type>textarea</type>
+				<value>parameter2</value>
+            </parameter2>
+		    <parameter3>
+                <label>parameter 3</label>
+                <visible>1</visible>
+                <required>1</required>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+            </parameter3>
+		    <parameter4>
+                <label>parameter 4</label>
+                <visible>1</visible>
+                <required>1</required>
+                <type>multiselect</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+            </parameter4>
+		    <parameter5>
+                <label>parameter 5</label>
+                <visible>1</visible>
+                <required>1</required>
+                <type>password</type>
+				<value>parameter5</value>
+            </parameter5>
+        </parameters>
+    </bloompcommerce_bc_shopping_cart>
+</widgets>

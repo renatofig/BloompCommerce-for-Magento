@@ -1,13 +1,58 @@
 <?xml version="1.0"?>
 <config>
-
-	<modules>
-		<Bloompa_BloompCommerce>
-			<active>true</active>
-			<codePool>community</codePool>
-			<version>2.0</version>
-		</Bloompa_BloompCommerce>
-	</modules>    
-       
-
-</config>
+  <modules>
+    <Bloompa_Bloompcommerce>
+      <version>1.5.0</version>
+    </Bloompa_Bloompcommerce>
+  </modules>
+  <frontend>
+    <routers>
+      <bloompcommerce>
+        <use>standard</use>
+          <args>
+            <module>Bloompa_Bloompcommerce</module>
+            <frontName>bloompcommerce</frontName>
+          </args>
+      </bloompcommerce>
+    </routers>
+		<layout>
+		  <updates>
+			<bloompcommerce>
+			  <file>bloompcommerce.xml</file>
+			</bloompcommerce>
+		  </updates>
+		</layout>
+  </frontend>
+  <global>
+    <helpers>
+      <bloompcommerce>
+        <class>Bloompa_Bloompcommerce_Helper</class>
+      </bloompcommerce>
+    </helpers>
+	<blocks>
+	  <bloompcommerce>
+		<class>Bloompa_Bloompcommerce_Block</class>
+	  </bloompcommerce>
+	</blocks>
+	<resources>
+	  <bloompcommerce_setup>
+		<setup>
+		  <module>Bloompa_Bloompcommerce</module>
+		</setup>
+		<connection>
+		  <use>core_setup</use>
+		</connection>
+	  </bloompcommerce_setup>
+	  <bloompcommerce_write>
+		<connection>
+		  <use>core_write</use>
+		</connection>
+	  </bloompcommerce_write>
+	  <bloompcommerce_read>
+		<connection>
+		  <use>core_read</use>
+		</connection>
+	  </bloompcommerce_read>
+	</resources>
+  </global>
+</config> 

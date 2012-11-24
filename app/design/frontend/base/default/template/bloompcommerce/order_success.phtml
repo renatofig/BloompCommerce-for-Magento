@@ -1,1 +1,25 @@
-<!-- BLOOMP COMMERCE --> 
+<?php
+$readConnection = Mage::getSingleton('core/resource')->getConnection('core_read');
+$writeConnection = Mage::getSingleton('core/resource')->getConnection('core_write');
+
+$order = Mage::getModel('sales/order')->load(Mage::getSingleton('checkout/session')->getLastOrderId()); 
+
+$token = $readConnection->fetchAll("SELECT * FROM `bloompa_settings` WHERE `param`='token' AND product='BloompCommerce' LIMIT 0,1");
+$token = $token[0]['value'];
+if($token!='' && $token!='novo'):
+?>
+<!-- START - BLOOMP COMMERCE -->
+<div id="bloompa-cart-widget"></div>
+<script language="javascript" type="text/javascript">
+var loadBCW = function(){
+	bcw.conversion({
+		token: "<?php echo $token?>",
+		order_id: "<?php echo $order->getId() ?>",
+		total_amount: "<?php echo $order->getGrandTotal() ?>"
+	});
+};
+
+var aHead = document.getElementsByTagName("HEAD").item(0);var aScript= document.createElement("script");aScript.type = "text/javascript";aScript.src=("https:" == document.location.protocol ? "https" : "http") + "://www.bloompa.com.br/js/cart.widget-load.js";aHead.appendChild( aScript);if (aScript.readyState){aScript.onreadystatechange=function(){if (aScript.readyState == "loaded" || aScript.readyState == "complete"){aScript.onreadystatechange = null;loadBCW();}}}else{aScript.onload=function(){loadBCW();}}
+</script>
+<!-- END - BLOOMP COMMERCE -->
+<?php endif; ?>

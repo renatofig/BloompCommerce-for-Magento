@@ -41,7 +41,7 @@ class Bloompa_Bloompcommerce_IndexController extends Mage_Core_Controller_Front_
               'description' => 'Cupom de desconto fornecido pelo compartilhamento do site nas redes sociais (BloompCommerce).',
               'is_active' => 1,
               'website_ids' => array(1),
-              'customer_group_ids' => array(1,2,3,4),
+              'customer_group_ids' => array(0,1,2,3,4),
               'coupon_type' => 2,
               'coupon_code' => strtoupper('BC'.Mage::helper('core')->getRandomString(5)),
               'uses_per_coupon' => 1,

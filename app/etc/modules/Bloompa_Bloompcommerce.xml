@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Bloompa_Bloompcommerce>
+      <active>true</active>
+      <codePool>community</codePool>            
+	        <depends>
+                <Mage_Cms />
+            </depends>
+      <version>1.5.0</version>
+    </Bloompa_Bloompcommerce>
+  </modules>
+</config>

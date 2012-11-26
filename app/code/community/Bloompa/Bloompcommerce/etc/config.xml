@@ -40,6 +40,7 @@
 	  <bloompcommerce_setup>
 		<setup>
 		  <module>Bloompa_Bloompcommerce</module>
+		  <class>Bloompa_Bloompcommerce_Model_Resource_Setup</class>
 		</setup>
 		<connection>
 		  <use>core_setup</use>

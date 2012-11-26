@@ -3,7 +3,10 @@ BloompCommerce for Magento
 
 ##Sobre:
 Módulo desenvolvido pela equipe Bloompa.  
-Versão atual: 1.2
+Versão atual: 2.0
+***
+**O modulo foi completamente reescrito e agora está mais seguro, estável e simples de usar.**
+***
 
 ###O que é Bloompa?
 O Bloompa é uma startup que nasceu através de pesquisas sobre o mercado de social commerce. Bloompa é a camada social dentro dos e-commerces!  

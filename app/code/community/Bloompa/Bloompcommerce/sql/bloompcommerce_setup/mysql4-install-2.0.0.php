@@ -1,7 +1,7 @@
 <?php
 $installer = $this;
 $installer->startSetup();
-$sql=<<<SQLTEXT
+$installer->run("
 DROP TABLE IF EXISTS `bloompa_settings`;
 CREATE TABLE `bloompa_settings` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -13,9 +13,5 @@ CREATE TABLE `bloompa_settings` (
 INSERT INTO bloompa_settings(id,product,param,value) VALUES(NULL,'BloompCommerce','token','novo');
 INSERT INTO bloompa_settings(id,product,param,value) VALUES(NULL,'BloompCommerce','discount_value_facebook','5');
 INSERT INTO bloompa_settings(id,product,param,value) VALUES(NULL,'BloompCommerce','discount_value_twitter','5');
-SQLTEXT;
-
-$installer->run($sql);
-
+");
 $installer->endSetup();
-	 

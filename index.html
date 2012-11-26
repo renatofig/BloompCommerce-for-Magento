@@ -125,46 +125,21 @@
 <br/><br/>
             <section class="sec-header">
                 <h3 class="font-bree-serif">Passo 2</h3>
-                <p>Descompacte o arquivo que você fez download e copie a pasta "<strong>app</strong>" para dentro da estrutura da sua loja.</p>
-                <div class="alert alert-warning"><strong>Atenção:</strong> na versão 1.6 do Magento você deve colocar os arquivos contidos na pasta "<strong>app/design/frontend</strong>" dentro da pasta "<strong>app/design/frontend/base</strong>" da sua loja.</div>
+                <p>Acesse o painel administrativo da sua loja e acesse através do menu "<strong>System > Magento Connect > Magento Connect Manager</strong>".</p>                
             </section>
             
             <br/><br/>
             <section class="sec-header">
                 <h3 class="font-bree-serif">Passo 3</h3>
-                <p>Acesse qualquer página da sua loja para que seja criada a tabela "<code><attr>bloompa</attr></code>" no banco de dados.</p>
-                <div class="alert alert-warning">Caso não tenha gerado a tabela, acesse o menu <strong>System > Cache Management</strong> na área administrativa de sua loja, marque todos os registros, no campo <strong>Actions</strong> selecione <strong>Disable</strong> e em seguida clique em <strong>Submit</strong>. Este procedimento irá fazer com que as páginas sejam geradas novamente e consequentemente tente criar a tabela "bloompa" no banco de dados.</div>
+                <p>No bloco "<strong>Direct package file upload</strong>" escolha o aquivo que você baixo e clique em "<strong>upload</strong>";</p>                
             </section>
 
             <br/><br/>
             <section class="sec-header">
                 <h3 class="font-bree-serif">Passo 4</h3>
-                <p>Rode o seguinte comando SQL em seu banco de dados:</p>
-                <pre class="prettyprint linenums">INSERT INTO bloompa (id_token, token) VALUES (1, '<script>if(QueryString.token!=undefined){document.write(QueryString.token);}else{document.write('<strong>INSIRA SEU TOKEN AQUI</strong>');}</script>');</pre>
+                <p>Agora é só aguardar alguns segundos para ativarmos a extensão em sua loja, você receberá uma notificação por email sobre a conclusão do processo de ativação.</p>                
             </section>
-
-            <br/><br/>
-            <section class="sec-header">
-                <h3 class="font-bree-serif">Passo 5</h3>
-                <p>Inclua o código abaixo no template da página de produtos do seu tema, onde você deseja que os botões das Expressões Sociais sejam mostrados.</p>
-                <pre class="prettyprint linenums">&lt;div id="bloompa-social-expression-widget"&gt;&lt;/div&gt;</pre>
-            </section>
-
-						<br/><br/>
-            <section class="sec-header">
-                <h3 class="font-bree-serif">Passo 6</h3>
-                <p>Acesse o carrinho de compras e confira se apareceu os botões de compartilhamento.</p>
-
-								<div class="alert">Caso deseje pode alterar o posicionamento, edite o arquivo <strong>app/design/frontend/base/default/template/checkout/cart.phtml</strong>, localize a linha <code>&lt;div id="bloompa-cart-widget"&gt;&lt;/div&gt;</code> e substitua por <code>&lt;div id="bloompa-cart-widget" style="float: left; margin-right: 40px;" &gt;&lt;/div&gt;</code>.</div>						
-						</section>
-
-
-            <br/><br/>
-            <section class="sec-header">
-                <h3 class="font-bree-serif">Passo 7</h3>
-                <p> Na área administrativa da sua loja, acesse o menu <strong>Promotions > Shopping Cart Price Rules</strong> e verifique se os coupons do Bloompa foram gerados.</p>
-            </section>
-
+            
 						
 						<br/><br/>
             <section class="sec-header">

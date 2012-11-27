@@ -1,37 +1,27 @@
 <?php 
 $item = Mage::registry('product');
-
 $readConnection = Mage::getSingleton('core/resource')->getConnection('core_read');
-$strsql = "SELECT * FROM `salesrule` WHERE `name`='Bloompa-Facebook' OR `name`='Bloompa-Twitter'";
-$bloompa = $readConnection->fetchAll($strsql);
-if(count($bloompa)>0):
-	$strsql = "SELECT * FROM `bloompa_settings` WHERE `param`='token' AND product='BloompCommerce' LIMIT 0,1";
-	$token = $readConnection->fetchAll($strsql);
-	$token = $token[0]['value'];	
-	if($token!='' && $token!='novo'):
+$strsql = "SELECT * FROM `bloompa_settings` WHERE `param`='token' AND product='BloompCommerce' LIMIT 0,1";
+$token = $readConnection->fetchAll($strsql);
+$token = $token[0]['value'];	
+if($token!='' && $token!='novo'):
 ?>
 <!-- BLOOMP COMMERCE - SOCIAL EXPRESSIONS - BEGIN -->
-<div id="bloompa-social-expression-widget"></div>
+<div id="bloompa-social-expression-widget" style="margin-top:40px;margin-bottom:80px;"></div>
 <!-- BLOOMP COMMERCE  - SOCIAL EXPRESSIONS - END -->
 
 <!-- START - BLOOMP COMMERCE -->
 <div id="bloompa-product-widget"></div>
-<?php if(isset($_SERVER["HTTPS"]) AND $_SERVER["HTTPS"] == "on"): ?>
-<script src="https://www.bloompa.com.br/js/product.widget-load.js" type="text/javascript"></script>
-<?php else: ?>
-<script src="http://www.bloompa.com.br/js/product.widget-load.js" type="text/javascript"></script>
-<?php endif; ?>
+<script src="http<?php echo (isset($_SERVER["HTTPS"]) AND $_SERVER["HTTPS"] == "on")?'s':''?>://www.bloompa.com.br/js/product.widget-load.js" type="text/javascript"></script>
 <script type="text/javascript">
 var bcw_product = [{
-prod_page_url: "<?=Mage::getBaseUrl().($item->_data['url_path']);?>",
-prod_img_url: "<?=Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'catalog/product'.$item->_data['thumbnail'];?>",
-prod_title: "<?=$item->_data['name'];?>",
+prod_page_url: "<?php echo Mage::getBaseUrl().($item->_data['url_path']);?>",
+prod_img_url: "<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'catalog/product'.$item->_data['thumbnail'];?>",
+prod_title: "<?php echo $item->_data['name'];?>",
 prod_currency: "BRL",
-prod_price: "<?=$item->_data['price'];?>"
+prod_price: "<?php echo $item->_data['price'];?>"
 }];
-bcw.init({token: "<?=$token;?>",product: bcw_product,show: true });
+bcw.init({token: "<?php echo $token;?>",product: bcw_product,show: true });
 </script>
 <!-- END - BLOOMP COMMERCE -->
-<?php endif;
-endif;
-?>
+<?php endif; ?>

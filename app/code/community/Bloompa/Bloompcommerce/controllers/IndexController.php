@@ -167,8 +167,7 @@ class Bloompa_Bloompcommerce_IndexController extends Mage_Core_Controller_Front_
       header('Access-Control-Allow-Headers: X-Requested-With');
 
       $social_network = strtolower(trim($_POST['social_network']));
-      $discount_value = trim($_REQUEST['set_discount']);
-
+      $discount_value = trim($_POST['set_discount']);
       
       $writeConnection = Mage::getSingleton('core/resource')->getConnection('core_write');
 

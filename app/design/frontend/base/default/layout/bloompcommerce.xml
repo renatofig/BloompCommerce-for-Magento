@@ -13,7 +13,7 @@
   
     <checkout_cart_index>
         <reference name="content">        
-          <reference name="checkout.cart.top_methods"> 
+          <reference name="checkout.cart.methods"> 
             <block type="page/html" name="bloompcommerce_cart" before="-" template="bloompcommerce/cart.phtml"/>
           </reference>                            
         </reference>                

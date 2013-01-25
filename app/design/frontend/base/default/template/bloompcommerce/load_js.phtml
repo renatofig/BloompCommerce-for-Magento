@@ -1,19 +1,11 @@
 <?php 
-$item = Mage::registry('product');
 $readConnection = Mage::getSingleton('core/resource')->getConnection('core_read');
 $strsql = "SELECT * FROM `bloompa_settings` WHERE `param`='token' AND product='BloompCommerce' LIMIT 0,1";
 $token = $readConnection->fetchAll($strsql);
 $token = $token[0]['value'];	
 if($token!='' && $token!='novo'):
 ?>
-
-<!-- BloompCommerce - social expressions -->
-<div data-prefix="bloompa:product" data-social_expression="true" data-title="<?php echo $item->_data['name'];?>" data-url="<?php echo Mage::getBaseUrl().($item->_data['url_path']);?>" data-image="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'catalog/product'.$item->_data['thumbnail'];?>" data-currency="BRL" data-price="<?php echo $item->_data['price'];?>"></div>
-<!-- /BloompCommerce - social expressions -->
-
-
 <!-- BloompCommerce - JS -->
 <script src="http<?php echo (isset($_SERVER["HTTPS"]) AND $_SERVER["HTTPS"] == "on")?'s':''?>://www.bloompa.com.br/js/bloompcommerce.widget-load.js" data-apitoken="<?php echo $token;?>"></script>
 <!-- /BloompCommerce - JS -->
-
 <?php endif; ?>

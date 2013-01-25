@@ -1,0 +1,20 @@
+<?php 
+$item = Mage::registry('product');
+$readConnection = Mage::getSingleton('core/resource')->getConnection('core_read');
+$strsql = "SELECT * FROM `bloompa_settings` WHERE `param`='token' AND product='BloompCommerce' LIMIT 0,1";
+$token = $readConnection->fetchAll($strsql);
+$token = $token[0]['value'];	
+if($token!='' && $token!='novo'):
+?>
+
+<!-- BloompCommerce - product -->
+<meta name="bloompa:source" content="product" />
+<meta name="bloompa:product-title" content="<?php echo $item->_data['name'];?>" />
+<meta name="bloompa:product-url" content="<?php echo Mage::getBaseUrl().($item->_data['url_path']);?>" />
+<meta name="bloompa:product-image" content="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'catalog/product'.$item->_data['thumbnail'];?>" />
+<meta name="bloompa:product-currency" content="BRL" />
+<meta name="bloompa:product-price" content="<?php echo $item->_data['price'];?>" />
+<meta name="bloompa:product-recommendation" content="true" />
+<!-- /BloompCommerce - product -->
+
+<?php endif; ?>

@@ -26,18 +26,16 @@ $token = $readConnection->fetchAll("SELECT * FROM `bloompa_settings` WHERE `para
 $token = $token[0]['value'];
 if($token!='' && $token!='novo'):
 ?>
-<!-- START - BLOOMP COMMERCE -->
-<div id="bloompa-cart-widget"></div>
-<script language="javascript" type="text/javascript">
-var loadBCW = function(){
-	bcw.conversion({
-		token: "<?php echo $token?>",
-		order_id: "<?php echo $order->getId() ?>",
-		total_amount: "<?php echo $order->getGrandTotal() ?>"
-	});
-};
 
-var aHead = document.getElementsByTagName("HEAD").item(0);var aScript= document.createElement("script");aScript.type = "text/javascript";aScript.src=("https:" == document.location.protocol ? "https" : "http") + "://www.bloompa.com.br/js/cart.widget-load.js";aHead.appendChild( aScript);if (aScript.readyState){aScript.onreadystatechange=function(){if (aScript.readyState == "loaded" || aScript.readyState == "complete"){aScript.onreadystatechange = null;loadBCW();}}}else{aScript.onload=function(){loadBCW();}}
-</script>
-<!-- END - BLOOMP COMMERCE -->
+	<!-- BloompCommerce - conversion -->
+	<meta name="bloompa:source" content="conversion" />
+	<meta name="bloompa:conversion-amount" content="<?php echo $order->getGrandTotal() ?>" />
+	<meta name="bloompa:conversion-order_id" content="<?php echo $order->getId() ?>" />
+	<meta name="bloompa:conversion-discount_amount" content="<?php echo $bc_discount_percent ?>" />
+	<!-- /BloompCommerce - conversion -->
+
+	<!-- BloompCommerce - JS -->
+	<script src="http<?php echo (isset($_SERVER["HTTPS"]) AND $_SERVER["HTTPS"] == "on")?'s':''?>://www.bloompa.com.br/js/bloompcommerce.widget-load.js" data-apitoken="<?php echo $token;?>"></script>
+	<!-- /BloompCommerce - JS -->
+
 <?php endif; ?>

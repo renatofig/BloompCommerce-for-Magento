@@ -3,7 +3,7 @@ BloompCommerce for Magento
 
 ##Sobre:
 Módulo desenvolvido pela equipe Bloompa.  
-Versão atual: 2.0.1
+Versão atual: 2.0.2
 ***
 **O modulo foi completamente reescrito e agora está mais seguro, estável e simples de usar.**
 ***

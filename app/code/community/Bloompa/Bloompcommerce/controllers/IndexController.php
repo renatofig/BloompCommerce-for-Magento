@@ -7,12 +7,16 @@ class Bloompa_Bloompcommerce_IndexController extends Mage_Core_Controller_Front_
 
       @session_start();        
 
-      $social_network = ucfirst(trim($this->getRequest()->getParam('social_network')));      
-      if(is_null($social_network)){
-        $this->_redirect('/');
-        exit();
-      }else
-        $_SESSION['bc_social_network'] = $social_network;      
+      // $social_network = ucfirst(trim($this->getRequest()->getParam('social_network')));      
+      // if(is_null($social_network)){
+      //   // $this->_redirect('/');
+      //   // exit();
+      // }
+      // //else
+      // //   $_SESSION['bc_social_network'] = $social_network;      
+
+      $social_network = 'Facebook';
+      $_SESSION['bc_social_network'] = $social_network;
 
       $readConnection = Mage::getSingleton('core/resource')->getConnection('core_read');
       $bc_discount_percent = $readConnection->fetchOne("SELECT value FROM `bloompa_settings` WHERE `param`='discount_value_".strtolower($social_network)."' AND product='BloompCommerce' LIMIT 1");             
@@ -111,18 +115,22 @@ class Bloompa_Bloompcommerce_IndexController extends Mage_Core_Controller_Front_
 
 
         if(!is_null($couponCode) AND $couponCode!=''){
-          
+                    
           //apply coupon
-          Mage::getSingleton("checkout/session")->setData("coupon_code",$couponCode);
-          Mage::getSingleton('checkout/cart')->getQuote()->setCouponCode($couponCode)->collectTotals()->save();
-          Mage::getSingleton('core/session')->addSuccess($this->__('Coupon BloompCommerce applied.'));          
+          $res1 = Mage::getSingleton("checkout/session")->setData("coupon_code",$couponCode);
+          $res2 = Mage::getSingleton('checkout/cart')->getQuote()->setCouponCode($couponCode)->collectTotals()->save();
           
-          $this->_redirect('checkout/cart');
+          if($res2 AND $res1){
+            Mage::getSingleton('core/session')->addSuccess($this->__('Coupon BloompCommerce applied.'));                    
+          }else{
+            Mage::getSingleton('core/session')->addError($this->__('Coupon BloompCommerce NOT applied.'));
+          }
 
-          
         }else{
-          exit('Coupon discount not found.');
+          Mage::getSingleton('core/session')->addError($this->__('Coupon BloompCommerce NOT FOUND.'));
         }
+        
+        $this->_redirect('checkout/cart');
         
       
       }else{

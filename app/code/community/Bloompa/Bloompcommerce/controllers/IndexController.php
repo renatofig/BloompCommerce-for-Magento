@@ -36,13 +36,17 @@ class Bloompa_Bloompcommerce_IndexController extends Mage_Core_Controller_Front_
                 
 
         if($new_code==true){
+
+          $stores_ids = Mage::getModel('core/store')->getCollection()->getAllIds();
+          $websites_ids = Mage::getModel('core/website')->getCollection()->getAllIds();
+
           // data to create coupon
           $data = array(
               'product_ids' => null,
               'name' => sprintf('AUTO_GENERATION CUSTOMER_%s - '.intval($bc_discount_percent).'%% BloompCommerce-'.$social_network.' discount', $customer_id),
               'description' => 'Cupom de desconto fornecido pelo compartilhamento do site nas redes sociais (BloompCommerce).',
               'is_active' => 1,
-              'website_ids' => array(1),
+              'website_ids' => $websites_ids,
               'customer_group_ids' => array(0,1,2,3,4),
               'coupon_type' => 2,
               'coupon_code' => strtoupper('BC'.Mage::helper('core')->getRandomString(5)),

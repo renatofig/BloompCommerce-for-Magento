@@ -20,18 +20,22 @@ class Bloompa_Bloompcommerce_IndexController extends Mage_Core_Controller_Front_
 
       $readConnection = Mage::getSingleton('core/resource')->getConnection('core_read');
       $bc_discount_percent = $readConnection->fetchOne("SELECT value FROM `bloompa_settings` WHERE `param`='discount_value_".strtolower($social_network)."' AND product='BloompCommerce' LIMIT 1");             
+
       if(!is_null($bc_discount_percent)){
         
         $new_code = false;                
-        if(isset($_SESSION['bc_customer_id']))
+        if(isset($_SESSION['bc_customer_id'])){
           $customer_id = $_SESSION['bc_customer_id'];
-        else{
+        }else{
+
           $customer_id = Mage::getSingleton('customer/session')->getCustomerId();
+          $new_code = true;
+
           if(is_null($customer_id) OR empty($customer_id)){                    
             $customer_id = 'generic_'.strtoupper(Mage::helper('core')->getRandomString(5));            
-            $_SESSION['bc_customer_id'] = $customer_id;
-            $new_code = true;
+            $_SESSION['bc_customer_id'] = $customer_id;            
           }
+
         }
                 
 
@@ -118,7 +122,7 @@ class Bloompa_Bloompcommerce_IndexController extends Mage_Core_Controller_Front_
         $couponCode = $model->getCode();
 
 
-        if(!is_null($couponCode) AND $couponCode!=''){
+        if(!is_null($couponCode)){
                     
           //apply coupon
           $res1 = Mage::getSingleton("checkout/session")->setData("coupon_code",$couponCode);
